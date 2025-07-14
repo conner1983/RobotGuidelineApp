@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- 这是我们自定义的View，用于绘制指示线 -->
+    <com.example.robotguidelineapp.GuidelineView
+        android:id="@+id/guidelineView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_controls"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- 控件区域的分割线 -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_controls"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.7" />
+
+    <!-- 转向角度控制 -->
+    <TextView
+        android:id="@+id/label_angle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="转向角度"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline_controls" />
+
+    <SeekBar
+        android:id="@+id/seekBar_angle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:max="90"
+        android:progress="45"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintStart_toStartOf="@+id/label_angle"
+        app:layout_constraintEnd_toStartOf="@+id/value_angle"
+        app:layout_constraintTop_toBottomOf="@+id/label_angle" />
+
+    <TextView
+        android:id="@+id/value_angle"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:text="0°"
+        android:gravity="end"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/seekBar_angle"
+        app:layout_constraintBottom_toBottomOf="@+id/seekBar_angle"/>
+
+    <!-- 摄像头高度控制 -->
+    <TextView
+        android:id="@+id/label_height"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="摄像头高度"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/label_angle"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar_angle" />
+
+    <SeekBar
+        android:id="@+id/seekBar_height"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="50"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintStart_toStartOf="@+id/label_height"
+        app:layout_constraintEnd_toStartOf="@+id/value_height"
+        app:layout_constraintTop_toBottomOf="@+id/label_height" />
+
+    <TextView
+        android:id="@+id/value_height"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:text="0.5m"
+        android:gravity="end"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/seekBar_height"
+        app:layout_constraintBottom_toBottomOf="@+id/seekBar_height"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
