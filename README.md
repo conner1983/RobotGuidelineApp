@@ -64,6 +64,7 @@
 * **绘图：** Android Canvas API / Custom View
 
 ## 项目结构
+```
 RobotGuidelineApp/
 ├── app/
 │   ├── src/
@@ -78,7 +79,7 @@ RobotGuidelineApp/
 ├── demo.png              <-- 您的截图文件
 ├── README.md             <-- 本文件
 └── ... (其他 Gradle 或项目配置文件)
-
+```
 
 ## 贡献
 
